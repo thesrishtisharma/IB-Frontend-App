@@ -1,7 +1,5 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -53,6 +51,13 @@ export default function TabTwoScreen() {
                 </ThemedText>
             ))}
         </ThemedView>
+        <ThemedView style={styles.linebreak}>
+            <ThemedText>
+                <Text style={{ fontWeight: 'bold' }}>Note: </Text>
+                At the bottom of the screen, you will see information in collapsed menu.
+                Click on the <Text style={{ fontWeight: 'bold', textDecorationLine: 'underline' }}>branch area name </Text> to view the information for the specific branch
+            </ThemedText>
+        </ThemedView>
     </ParallaxScrollView>
   );
 }
@@ -68,4 +73,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 8,
   },
+    linebreak:{
+      paddingBottom: 18
+    }
 });

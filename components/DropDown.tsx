@@ -1,9 +1,7 @@
-import {StatusBar} from "expo-status-bar";
 import {
     Button,
     StyleSheet,
-    Text,
-    TouchableOpacity, useColorScheme,
+    useColorScheme,
     View
 } from "react-native";
 
@@ -11,10 +9,7 @@ import {ThemedView} from "@/components/ThemedView";
 import {Picker} from "@react-native-picker/picker";
 import {useEffect, useState} from "react";
 import {ThemedText} from "@/components/ThemedText";
-import RNPickerSelect from 'react-native-picker-select';
-import {
-    CommonStyles
-} from "@/components/common_styles/CommonStyles";
+import { CommonStyles } from "@/components/common_styles/CommonStyles";
 
 interface DropDownProps {
     onApiResponse: (data: any, message: string) => void; // Define prop for API response handler
@@ -29,7 +24,7 @@ export function DropDown({onApiResponse}: DropDownProps) {
     useEffect(() => {
         const fetchZones = async () =>{
             try{
-                const response = await fetch("http://192.168.29.38:8080/api/v2/IB/fetchZones");
+                const response = await fetch("https://ib-backend-api-node-service.onrender.com/api/v2/IB/fetchZones");
                 if (response.ok){
                     const data = await response.json();
                     setZones(data.zones);
@@ -66,7 +61,7 @@ export function DropDown({onApiResponse}: DropDownProps) {
         setLoading(true);
         try {
             // Replace this URL with your actual API endpoint
-            const response = await fetch(`http://192.168.29.38:8080/api/v2/IB/fetchBranches?zone=`+zone); //https://api.example.com/data?zone=${zone}
+            const response = await fetch(`https://ib-backend-api-node-service.onrender.com/api/v2/IB/fetchBranches?zone=`+zone); //https://api.example.com/data?zone=${zone}
             const data = await response.json();
             onApiResponse(data, "Data fetched successfully");
         } catch (error) {

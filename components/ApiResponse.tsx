@@ -3,10 +3,7 @@ import {ThemedView} from "@/components/ThemedView";
 
 import {StyleSheet, Text, View} from "react-native";
 import {ThemedText} from "@/components/ThemedText";
-import {
-    CommonStyles
-} from "@/components/common_styles/CommonStyles";
-import {ExternalLink} from "@/components/ExternalLink";
+import { CommonStyles } from "@/components/common_styles/CommonStyles";
 import {Collapsible} from "@/components/Collapsible";
 
 interface ApiResponseProps{
